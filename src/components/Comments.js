@@ -10,8 +10,7 @@ import {
   KeyboardAvoidingView,
   TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  Keyboard,
+  ToastAndroid,
 } from 'react-native';
 import {withNavigation} from 'react-navigation';
 
@@ -24,7 +23,7 @@ const {height} = Dimensions.get('window');
 const commentsList = [
   {
     id: 1,
-    comment: 'imagine the atmosphere in the elevator lol',
+    comment: '@reinan imagine the atmosphere in the elevator lol',
     created_at: '2019-12-21 17:01:33',
     edited: false,
     likes: 70,
@@ -36,7 +35,7 @@ const commentsList = [
     replies: [
       {
         id: 2,
-        comment: 'Temos tão pouco tempo',
+        comment: '@Lucas Temos tão pouco tempo',
         created_at: '2019-12-21 17:01:33',
         edited: false,
         likes: 1,
@@ -224,9 +223,29 @@ class Comments extends React.Component {
 
   // Função para escolher uma pessoa para marcar nos comentários
   commentToChooseTagUser = username => {
-    const text = this.state.typing.split('@');
-    text[text.length - 1] = '@' + username + ' ';
-    this.setState({typing: text.join('')});
+    let tags = this.state.typing.split(' ');
+    tags.forEach((item, index) => {
+      if (item.charAt(0) !== '@') {
+        tags.splice(index, 1);
+      }
+    });
+
+    if (tags.indexOf('@' + username) === -1) {
+      const text = this.state.typing.split('@');
+      text.forEach((item, index) => {
+        text[index] = index > 0 ? '@' + item : item;
+      });
+      text[text.length - 1] = '@' + username + ' ';
+      this.setState({typing: text.join('')});
+    } else {
+      ToastAndroid.showWithGravityAndOffset(
+        'Este usuário já foi marcado!',
+        ToastAndroid.LONG,
+        ToastAndroid.TOP,
+        25,
+        50,
+      );
+    }
   };
 
   // Função para enviar um comentário
@@ -246,6 +265,7 @@ class Comments extends React.Component {
     });
     this.setState({comments: commentsList});
     this.setState({typing: ''});
+    this.setState({isTagUsers: false});
   };
 
   render() {

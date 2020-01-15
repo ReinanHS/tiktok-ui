@@ -30,6 +30,28 @@ export default class CommentBox extends React.Component {
     }));
   };
 
+  renderComment = comment => {
+    const list = new Array();
+    comment.split(' ').forEach((item, index) => {
+      if (item.charAt(0) === '@') {
+        return list.push(
+          <TouchableWithoutFeedback
+            key={index}
+            onPress={() => {
+              alert('Você será redirecionado para o perfil do usuário ' + item);
+            }}>
+            <Text style={style.commentTextTag}>{item + ' '}</Text>
+          </TouchableWithoutFeedback>,
+        );
+      } else {
+        return list.push(item + ' ');
+      }
+    });
+
+    // console.log(x);
+    return <Text>{list}</Text>;
+  };
+
   render() {
     const {
       comment,
@@ -57,7 +79,8 @@ export default class CommentBox extends React.Component {
               </AntDesign>
             </View>
             <View style={style.commentBody}>
-              <Text>{comment}</Text>
+              {/* <Text>{comment}</Text> */}
+              {this.renderComment(comment)}
             </View>
             <View style={style.commentFooter}>
               <View style={style.commentLikes}>
@@ -131,7 +154,14 @@ const style = StyleSheet.create({
     textAlign: 'right',
     color: '#C5C3CA',
   },
-  commentBody: {},
+  commentBody: {
+    padding: 5,
+  },
+  commentTextTag: {
+    fontWeight: 'bold',
+    color: '#6a4c93',
+    fontSize: 16,
+  },
   commentFooter: {
     flex: 1,
     flexDirection: 'row',
