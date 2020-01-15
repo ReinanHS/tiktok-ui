@@ -204,14 +204,19 @@ class Comments extends React.Component {
 
   // Função para editar o texto dos comentários feitos
   commentText = text => {
+    // Salva a última palavra que foi digitada para logo após fazermos uma comparação
     const lastWord =
       text.split(' ').length > 1
         ? text.split(' ')[text.split(' ').length - 1]
         : text;
+    // Verificando se a palavra é uma menção para uma marcação
     if (lastWord.charAt(0) === '@') {
+      // Habilita a tela com a listagem dos usuários que podem ser marcados nesse comentário
       this.setState({isTagUsers: true});
+      // Salva todas as caracteres que estão após o @
       this.setState({textTagUser: lastWord.substring(1)});
     } else {
+      // Se o primeiro carácter da última palavra digitada não tiver uma @ desabilitamos a tela
       this.setState({isTagUsers: false});
     }
     this.setState({typing: text});
@@ -245,23 +250,29 @@ class Comments extends React.Component {
 
   render() {
     return (
+      // Modal referente aos comentários
       <Modal
         animationType="slide"
         transparent={true}
         visible={this.props.modalVisible}>
         <View style={style.modalDialog}>
+          {/* Header */}
           <View style={style.modalHeader}>
+            {/* Informações sobre o total de comentários */}
             <Text style={style.modalTitle}>
               {this.state.comments.length} comentários
             </Text>
+            {/* Botão para fechar a modal */}
             <TouchableHighlight
               style={style.modalClose}
               onPress={this.props.setModalVisible}>
               <Ionicons name={'md-close'} size={25} color={'#C5C3CA'} />
             </TouchableHighlight>
           </View>
+          {/* Body */}
           <View style={style.modalBody}>
             {this.state.isTagUsers ? (
+              // Listagem dos usuários que poderão ser marcados em um comentário
               <FlatList
                 data={this.state.tagUsers.filter(({name, username}) => {
                   return (
@@ -275,6 +286,7 @@ class Comments extends React.Component {
                 })}
                 renderItem={({item, index}) => {
                   return (
+                    // Componente que tem as informações dos usuários
                     <TagUsers
                       item={item}
                       toChooseTag={this.commentToChooseTagUser}
@@ -285,6 +297,7 @@ class Comments extends React.Component {
                 keyExtractor={item => item.id.toString()}
               />
             ) : (
+              // Listagem dos comentários dessa publicação
               <FlatList
                 data={this.state.comments}
                 renderItem={({item, index}) => {
@@ -294,8 +307,10 @@ class Comments extends React.Component {
               />
             )}
           </View>
+          {/* Footer */}
           <KeyboardAvoidingView behavior="position" style={style.modal}>
             <View style={style.modalFooter}>
+              {/* Caixa de comentário */}
               <TextInput
                 value={this.state.typing}
                 style={style.input}
@@ -305,6 +320,7 @@ class Comments extends React.Component {
                 maxLength={400}
                 autoCorrect={true}
               />
+              {/* Botão para enviar o comentário */}
               <TouchableOpacity onPress={this.commentSeed}>
                 <Text style={style.send}>Send</Text>
               </TouchableOpacity>

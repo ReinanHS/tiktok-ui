@@ -24,8 +24,10 @@ export default class UserList extends React.Component {
       <TouchableWithoutFeedback
         onPress={() => this.props.toChooseTag(username)}>
         <View style={styles.container}>
+          {/* Imagem do usuário */}
           <Image style={styles.avatar} source={avatar} />
           <View style={styles.userInfos}>
+            {/* Informações sobre o usuário */}
             <Text style={styles.userName}>{name}</Text>
             <Text style={styles.userTag}>@{username}</Text>
           </View>
