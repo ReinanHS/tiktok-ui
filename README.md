@@ -4,10 +4,6 @@ TikTok, também conhecido como Douyin na China, é um aplicativo de mídia para 
 # Interações
 <center>
 <div>
-<img width="200" alt="portfolio_view" src="https://s5.gifyu.com/images/untitled2.gif">
-<img width="200" alt="portfolio_view" src="https://s5.gifyu.com/images/untitleda5e0164f6d66a33f.gif">
-</div>
-<div>
 <img width="200" alt="portfolio_view" src="https://i.imgur.com/iJQlwIs.jpg">
 <img width="200" alt="portfolio_view" src="https://i.imgur.com/kIAyQR4.jpg">
 </div>
@@ -22,6 +18,16 @@ Criei esse repositório para estudar sobre o React Native e tentar recriar vári
 ```sh
 npm install && react-native run-android
 ```
+
+## Ambiente de desenvolvimento
+
+- Binaries
+  - Node: 12.14.0
+  - Yarn: 1.21.1
+  - npm: 6.13.6
+- npmPackages
+  - react: 16.9.0
+  - react-native: 0.61.5
 
 ## Colaboradores
 
