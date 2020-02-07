@@ -20,7 +20,6 @@ export default class Avatar extends React.Component {
 
   getStyleFollowView() {
     const style = {
-      // textAlign: 'center',
       width: 24,
       height: 24,
       borderRadius: 24 / 2,

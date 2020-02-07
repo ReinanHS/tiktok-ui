@@ -1,5 +1,5 @@
 import React from 'react';
-import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import Feed from './pages/Feed';
@@ -62,14 +62,5 @@ const Menu = createBottomTabNavigator(
     },
   },
 );
-
-// const MainStackNavigator = createSwitchNavigator({
-//   main: {
-//     screen: Menu,
-//   },
-//   tagUsers: {
-//     screen: TagUsers,
-//   },
-// });
 
 export default createAppContainer(Menu);

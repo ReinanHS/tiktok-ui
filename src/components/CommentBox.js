@@ -38,7 +38,7 @@ export default class CommentBox extends React.Component {
           <TouchableWithoutFeedback
             key={index}
             onPress={() => {
-              alert('Você será redirecionado para o perfil do usuário ' + item);
+              alert("You will be redirected to the user's profile " + item);
             }}>
             <Text style={style.commentTextTag}>{item + ' '}</Text>
           </TouchableWithoutFeedback>,
@@ -48,7 +48,6 @@ export default class CommentBox extends React.Component {
       }
     });
 
-    // console.log(x);
     return <Text>{list}</Text>;
   };
 
@@ -78,10 +77,7 @@ export default class CommentBox extends React.Component {
                 1 Dia
               </AntDesign>
             </View>
-            <View style={style.commentBody}>
-              {/* <Text>{comment}</Text> */}
-              {this.renderComment(comment)}
-            </View>
+            <View style={style.commentBody}>{this.renderComment(comment)}</View>
             <View style={style.commentFooter}>
               <View style={style.commentLikes}>
                 {likes > 0 ? (

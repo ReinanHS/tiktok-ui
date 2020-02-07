@@ -1,25 +1,25 @@
 # Tik Tok UI Clone
-TikTok, também conhecido como Douyin na China, é um aplicativo de mídia para criar e compartilhar vídeos curtos.
+TikTok, also known as Douyin in China, is a media app for creating and sharing short videos.
 
-# Interações
+# Interactions
 <center>
 <div>
-<img width="200" alt="portfolio_view" src="https://i.imgur.com/iJQlwIs.jpg">
-<img width="200" alt="portfolio_view" src="https://i.imgur.com/kIAyQR4.jpg">
+  <img width="200" alt="portfolio_view" src="https://i.imgur.com/iJQlwIs.jpg">
+  <img width="200" alt="portfolio_view" src="https://i.imgur.com/kIAyQR4.jpg">
 </div>
 </center>
 
-## Qual a finalidade desse repositório?
+## What is the purpose of this repository?
 
-Criei esse repositório para estudar sobre o React Native e tentar recriar vários designes de aplicativos famosos.
+I created this repository to study React Native and try to recreate several famous app designs.
 
-## Como instalar
+## How to install?
 
 ```sh
 npm install && react-native run-android
 ```
 
-## Ambiente de desenvolvimento
+## Development environment
 
 - Binaries
   - Node: 12.14.0
@@ -29,10 +29,10 @@ npm install && react-native run-android
   - react: 16.9.0
   - react-native: 0.61.5
 
-## Colaboradores
+## Contributors
 
-Gostaríamos de agradecer aos seguintes colaboradores por ajudar o desenvolvimento desse repositório
+We would like to thank the following contributors for helping to develop this repository
 
 - ReinanHS
 
-Ajude o projeto, faça a diferença Lista de Colaboradores
+Help the project, make a difference List of Collaborators

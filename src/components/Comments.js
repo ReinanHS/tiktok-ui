@@ -11,6 +11,8 @@ import {
   TextInput,
   TouchableOpacity,
   ToastAndroid,
+  ScrollView,
+  Button,
 } from 'react-native';
 import {withNavigation} from 'react-navigation';
 
@@ -201,27 +203,27 @@ class Comments extends React.Component {
     this.state.tagUsers = TagUsersList;
   }
 
-  // Função para editar o texto dos comentários feitos
+  // Function to edit the text of comments made
   commentText = text => {
-    // Salva a última palavra que foi digitada para logo após fazermos uma comparação
+    // Saves the last word that was typed for right after making a comparison
     const lastWord =
       text.split(' ').length > 1
         ? text.split(' ')[text.split(' ').length - 1]
         : text;
-    // Verificando se a palavra é uma menção para uma marcação
+    // Checking if the word is a mention for an appointment
     if (lastWord.charAt(0) === '@') {
-      // Habilita a tela com a listagem dos usuários que podem ser marcados nesse comentário
+      // Enables the screen with the list of users that can be marked in this comment
       this.setState({isTagUsers: true});
-      // Salva todas as caracteres que estão após o @
+      // Saves all characters after @
       this.setState({textTagUser: lastWord.substring(1)});
     } else {
-      // Se o primeiro carácter da última palavra digitada não tiver uma @ desabilitamos a tela
+      // If the first character of the last word entered does not have an @, we disable the screen
       this.setState({isTagUsers: false});
     }
     this.setState({typing: text});
   };
 
-  // Função para escolher uma pessoa para marcar nos comentários
+  // Function to choose a person to mark in comments
   commentToChooseTagUser = username => {
     let tags = this.state.typing.split(' ');
     tags.forEach((item, index) => {
@@ -248,7 +250,7 @@ class Comments extends React.Component {
     }
   };
 
-  // Função para enviar um comentário
+  // Function to send a comment
   commentSeed = () => {
     const id = commentsList.length + 4;
     commentsList.push({
@@ -270,7 +272,7 @@ class Comments extends React.Component {
 
   render() {
     return (
-      // Modal referente aos comentários
+      // Modal regarding comments
       <Modal
         animationType="slide"
         transparent={true}
@@ -278,11 +280,11 @@ class Comments extends React.Component {
         <View style={style.modalDialog}>
           {/* Header */}
           <View style={style.modalHeader}>
-            {/* Informações sobre o total de comentários */}
+            {/* Information on total comments */}
             <Text style={style.modalTitle}>
               {this.state.comments.length} comentários
             </Text>
-            {/* Botão para fechar a modal */}
+            {/* Button to close the modal */}
             <TouchableHighlight
               style={style.modalClose}
               onPress={this.props.setModalVisible}>
@@ -292,7 +294,7 @@ class Comments extends React.Component {
           {/* Body */}
           <View style={style.modalBody}>
             {this.state.isTagUsers ? (
-              // Listagem dos usuários que poderão ser marcados em um comentário
+              // List of users that can be tagged in a comment
               <FlatList
                 data={this.state.tagUsers.filter(({name, username}) => {
                   return (
@@ -317,7 +319,7 @@ class Comments extends React.Component {
                 keyExtractor={item => item.id.toString()}
               />
             ) : (
-              // Listagem dos comentários dessa publicação
+              // Listing of comments for this publication
               <FlatList
                 data={this.state.comments}
                 renderItem={({item, index}) => {
@@ -330,7 +332,7 @@ class Comments extends React.Component {
           {/* Footer */}
           <KeyboardAvoidingView behavior="position" style={style.modal}>
             <View style={style.modalFooter}>
-              {/* Caixa de comentário */}
+              {/* Comment box */}
               <TextInput
                 value={this.state.typing}
                 style={style.input}
@@ -340,7 +342,7 @@ class Comments extends React.Component {
                 maxLength={400}
                 autoCorrect={true}
               />
-              {/* Botão para enviar o comentário */}
+              {/* Button to send comment */}
               <TouchableOpacity onPress={this.commentSeed}>
                 <Text style={style.send}>Send</Text>
               </TouchableOpacity>
