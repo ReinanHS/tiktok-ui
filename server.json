@@ -1,0 +1,74 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Comedy"
+    },
+    {
+      "id": 2,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/2.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Animals"
+    },
+    {
+      "id": 3,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/3.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/3.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Head"
+    },
+    {
+      "id": 4,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/4.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/4.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Food and Drinks"
+    },
+    {
+      "id": 5,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/5.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/5.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Sport"
+    },
+    {
+      "id": 6,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/6.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/6.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Fitness and Health"
+    },
+    {
+      "id": 7,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/7.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/7.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Beauty"
+    },
+    {
+      "id": 8,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/8.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/8.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Skills"
+    },
+    {
+      "id": 9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/9.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/9.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Games"
+    },
+    {
+      "id": 10,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/10.jpeg",
+      "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/10.jpeg",
+      "aspectRatio": 0.834,
+      "title": "Fan club"
+    }
+  ] 
+}
