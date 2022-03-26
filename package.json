@@ -32,7 +32,7 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.57.0",
     "react-test-renderer": "16.9.0",
-    "minimist": ">=1.2.2",
+    "minimist": ">=1.2.6",
     "mem": ">=4.0.0"
   },
   "jest": {
